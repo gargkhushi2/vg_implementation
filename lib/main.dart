@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       title: 'After Market Mobile Application',
       theme: AppStyle.appTheme(),
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoutes.reviewForm,
+      initialRoute: AppRoutes.orderPlaced,
       onGenerateRoute: AppRoutes.getRoutes,
     );
   }

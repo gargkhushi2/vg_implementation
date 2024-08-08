@@ -25,7 +25,7 @@ class AppStyle {
       labelSmall: TextStyle(
         fontSize: 14,
         fontWeight: FontWeight.w400,
-      color: AppColors.white,
+        color: AppColors.white,
         fontFamily: AppFonts.robotoRegular,
       ),
       headlineSmall: TextStyle(
@@ -78,9 +78,9 @@ UnderlineInputBorder underlineInputBorder({
 // custom box shadow
 BoxShadow boxShadow() {
   return BoxShadow(
-    color: AppColors.black.withOpacity(0.2),
+    color: AppColors.black.withOpacity(0.1),
     offset: const Offset(0, 3),
-    spreadRadius: 2,
-    blurRadius: 5,
+    spreadRadius: 1,
+    blurRadius: 4,
   );
 }

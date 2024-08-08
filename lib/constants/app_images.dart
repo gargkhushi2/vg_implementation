@@ -29,4 +29,6 @@ class AppImages {
   static const googleButton = "assets/pngs/google_button.png";
   static const appLogo = "assets/pngs/app_logo.png";
   static const passwordSuccess = "assets/pngs/password_success.png";
+  static const exchange = "assets/pngs/exchange.png";
+  static const deliveryTruck = "assets/pngs/delivery_truck.png";
 }

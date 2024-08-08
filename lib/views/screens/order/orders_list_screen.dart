@@ -1,8 +1,10 @@
 import 'package:after_market_mobile_application/constants/app_colors.dart';
 import 'package:after_market_mobile_application/constants/app_images.dart';
+import 'package:after_market_mobile_application/constants/app_strings.dart';
 import 'package:after_market_mobile_application/constants/app_style.dart';
 import 'package:after_market_mobile_application/helper/responsiveness_handler.dart';
 import 'package:after_market_mobile_application/routes/app_routes.dart';
+import 'package:after_market_mobile_application/views/screens/product/product_information_layout.dart';
 import 'package:after_market_mobile_application/views/shared_widgets/app_button.dart';
 import 'package:after_market_mobile_application/views/shared_widgets/common_text_form_field.dart';
 import 'package:after_market_mobile_application/views/shared_widgets/custom_app_header.dart';
@@ -174,8 +176,12 @@ Widget orderedProductLayout(
   String productImage,
   String productName,
   String productSize,
-  String productQuantity,
-) {
+  String productQuantity, {
+  bool isFromOrderPlacedScreen = false,
+  String? originalPrice,
+  String? discountedPrice,
+  String? discountedPercent,
+}) {
   return Padding(
     padding: const EdgeInsets.symmetric(vertical: 10),
     child: Row(
@@ -217,21 +223,43 @@ Widget orderedProductLayout(
               ),
             ),
             verticalSpacer(),
+            if (isFromOrderPlacedScreen) ...[
+              priceAndDiscountLayout(
+                textTheme,
+                originalPrice ?? AppStrings.emptyString,
+                discountedPrice ?? AppStrings.emptyString,
+                discountPercent: discountedPercent ?? AppStrings.emptyString,
+                isOrderDetails: isFromOrderPlacedScreen,
+              ),
+              verticalSpacer(),
+            ],
             RichText(
               text: TextSpan(children: [
                 TextSpan(
-                  text: "Size:$productSize",
+                  text: isFromOrderPlacedScreen ? "Size " : "Size:$productSize",
                   style: textTheme.bodySmall?.copyWith(
                     color: AppColors.darkGreyShade,
                   ),
                 ),
+                if (isFromOrderPlacedScreen)
+                  TextSpan(
+                    text: productSize,
+                    style: textTheme.bodySmall?.copyWith(),
+                  ),
                 textSpanSpacer(width: 6),
                 TextSpan(
-                  text: "Quantity:$productQuantity",
+                  text: isFromOrderPlacedScreen
+                      ? "Quantity "
+                      : "Quantity:$productQuantity",
                   style: textTheme.bodySmall?.copyWith(
                     color: AppColors.darkGreyShade,
                   ),
                 ),
+                if (isFromOrderPlacedScreen)
+                  TextSpan(
+                    text: productQuantity,
+                    style: textTheme.bodySmall?.copyWith(),
+                  ),
               ]),
             )
           ],

@@ -6,6 +6,7 @@ import 'package:after_market_mobile_application/views/screens/authentication/log
 import 'package:after_market_mobile_application/views/screens/authentication/signup.dart';
 import 'package:after_market_mobile_application/views/screens/authentication/welcome_back.dart';
 import 'package:after_market_mobile_application/views/screens/order/order_details.dart';
+import 'package:after_market_mobile_application/views/screens/order/order_placed.dart';
 import 'package:after_market_mobile_application/views/screens/order/orders_list_screen.dart';
 import 'package:after_market_mobile_application/views/screens/order/return_order.dart';
 import 'package:after_market_mobile_application/views/screens/password/code_verification.dart';
@@ -32,6 +33,7 @@ class AppRoutes {
   static const orderDetail = '/orderDetail';
   static const returnOrder = '/returnOrder';
   static const reviewForm = '/reviewForm';
+  static const orderPlaced = '/orderPlaced';
 
   static Route getRoutes(RouteSettings settings) {
     switch (settings.name) {
@@ -88,6 +90,9 @@ class AppRoutes {
       case reviewForm:
         return MaterialPageRoute(
             builder: (BuildContext context) => ReviewForm());
+      case orderPlaced:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => OrderPlaced());
 
       default:
         return MaterialPageRoute(
