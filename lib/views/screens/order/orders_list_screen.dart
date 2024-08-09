@@ -70,7 +70,6 @@ class OrdersListScreen extends StatelessWidget {
 ///
 /// [orderStatus] is the current status of the order.
 /// [date] is the date of the order.
-/// [orderStatusImagePath] is the path to the image representing the order status.
 /// [productImage] is the path to the product image.
 /// [productName] is the name of the product.
 /// [productSize] is the size of the product.

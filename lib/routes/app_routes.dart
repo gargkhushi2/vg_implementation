@@ -2,6 +2,7 @@
 // manages navigation.
 
 import 'package:after_market_mobile_application/constants/app_strings.dart';
+import 'package:after_market_mobile_application/views/screens/address/add_new_address.dart';
 import 'package:after_market_mobile_application/views/screens/authentication/login.dart';
 import 'package:after_market_mobile_application/views/screens/authentication/signup.dart';
 import 'package:after_market_mobile_application/views/screens/authentication/welcome_back.dart';
@@ -34,6 +35,7 @@ class AppRoutes {
   static const returnOrder = '/returnOrder';
   static const reviewForm = '/reviewForm';
   static const orderPlaced = '/orderPlaced';
+  static const addNewAddress = "/addNewAddress";
 
   static Route getRoutes(RouteSettings settings) {
     switch (settings.name) {
@@ -93,6 +95,9 @@ class AppRoutes {
       case orderPlaced:
         return MaterialPageRoute(
             builder: (BuildContext context) => OrderPlaced());
+      case addNewAddress:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => AddNewAddress());
 
       default:
         return MaterialPageRoute(

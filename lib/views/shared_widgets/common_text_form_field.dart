@@ -2,6 +2,7 @@ import 'package:after_market_mobile_application/constants/app_colors.dart';
 import 'package:after_market_mobile_application/constants/app_images.dart';
 import 'package:after_market_mobile_application/constants/app_style.dart';
 import 'package:after_market_mobile_application/helper/responsiveness_handler.dart';
+import 'package:after_market_mobile_application/views/shared_widgets/spacer.dart';
 import 'package:flutter/material.dart';
 
 /// This class defines a customizable text form field with various properties.
@@ -39,6 +40,7 @@ class CommonTextFormField extends StatefulWidget {
     this.isOutlineInputBorder = false,
     this.keyBoardType = TextInputType.text,
     this.maxLines = 1,
+    this.maxLength,
   });
 
   final TextEditingController controller;
@@ -55,6 +57,7 @@ class CommonTextFormField extends StatefulWidget {
   final bool isOutlineInputBorder;
   final TextInputType keyBoardType;
   final int maxLines;
+  final int? maxLength;
 
   @override
   State<CommonTextFormField> createState() => _CommonTextFormFieldState();
@@ -83,6 +86,7 @@ class _CommonTextFormFieldState extends State<CommonTextFormField> {
               widget.labelText,
               style: textTheme.headlineSmall,
             ),
+            verticalSpacer(),
           ],
           TextFormField(
             scrollPadding: EdgeInsets.only(
@@ -91,6 +95,7 @@ class _CommonTextFormFieldState extends State<CommonTextFormField> {
             controller: widget.controller,
             cursorColor: AppColors.grey,
             maxLines: widget.maxLines,
+            maxLength: widget.maxLength,
             decoration: InputDecoration(
               hintText: widget.hintText,
               hintStyle: textTheme.labelSmall?.copyWith(
