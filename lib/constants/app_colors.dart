@@ -22,4 +22,5 @@ class AppColors {
   static const lightPink = Color(0xFFFEF2F2);
   static const bluishShade = Color(0xFFF9FAFB);
   static const lightGreyBorderShade = Color(0xFFF2F2F2);
+  static const redBright = Color(0xFFFF3B30);
 }

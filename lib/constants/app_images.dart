@@ -31,4 +31,6 @@ class AppImages {
   static const passwordSuccess = "assets/pngs/password_success.png";
   static const exchange = "assets/pngs/exchange.png";
   static const deliveryTruck = "assets/pngs/delivery_truck.png";
+  static const edit = "assets/pngs/edit.png";
+  static const trash = "assets/pngs/trash.png";
 }

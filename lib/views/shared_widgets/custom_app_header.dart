@@ -2,6 +2,7 @@ import 'package:after_market_mobile_application/constants/app_colors.dart';
 import 'package:after_market_mobile_application/constants/app_images.dart';
 import 'package:after_market_mobile_application/constants/app_strings.dart';
 import 'package:after_market_mobile_application/constants/app_style.dart';
+import 'package:after_market_mobile_application/routes/app_routes.dart';
 import 'package:after_market_mobile_application/views/shared_widgets/image_layout.dart';
 import 'package:after_market_mobile_application/views/shared_widgets/spacer.dart';
 import 'package:flutter/material.dart';
@@ -165,7 +166,9 @@ class CustomAppHeader extends StatelessWidget implements PreferredSizeWidget {
       padding: const EdgeInsets.all(10),
       child: OutlinedButton(
         onPressed: () {
-          // navigate to add address screen
+          Navigator.of(context).pushNamed(
+            AppRoutes.addNewAddress,
+          );
         },
         child: Text(
           AppStrings.newAddress,

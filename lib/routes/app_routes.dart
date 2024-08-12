@@ -3,6 +3,7 @@
 
 import 'package:after_market_mobile_application/constants/app_strings.dart';
 import 'package:after_market_mobile_application/views/screens/address/add_new_address.dart';
+import 'package:after_market_mobile_application/views/screens/address/address_list_screen.dart';
 import 'package:after_market_mobile_application/views/screens/authentication/login.dart';
 import 'package:after_market_mobile_application/views/screens/authentication/signup.dart';
 import 'package:after_market_mobile_application/views/screens/authentication/welcome_back.dart';
@@ -36,6 +37,7 @@ class AppRoutes {
   static const reviewForm = '/reviewForm';
   static const orderPlaced = '/orderPlaced';
   static const addNewAddress = "/addNewAddress";
+  static const addressList = "/addressList";
 
   static Route getRoutes(RouteSettings settings) {
     switch (settings.name) {
@@ -98,6 +100,9 @@ class AppRoutes {
       case addNewAddress:
         return MaterialPageRoute(
             builder: (BuildContext context) => AddNewAddress());
+      case addressList:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => AddressListScreen());
 
       default:
         return MaterialPageRoute(
